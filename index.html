@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>انجمن ادیتوران | نسخه دوم</title>
+<meta name="description" content="نسخه دوم سایت انجمن ادیتوران">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="toast" class="toast"></div>
+
+<header>
+  <a class="brand" href="#home"><span class="mark">E</span><span>انجمن <b>ادیتوران</b></span></a>
+  <button id="menu" class="icon-btn">☰</button>
+  <nav id="nav">
+    <a href="#home">خانه</a><a href="#members">اعضا</a><a href="#works">نمونه‌کارها</a>
+    <a href="#news">اخبار</a><a href="#about">درباره</a><a href="#contact">ارتباط</a>
+  </nav>
+  <div class="head-actions"><button class="ghost" onclick="openModal('login')">ورود</button><button class="primary" onclick="openModal('register')">ثبت‌نام</button></div>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">EDITORAN COMMUNITY · V2</p>
+    <h1>ایده‌ات را<br><span>به تصویر تبدیل کن.</span></h1>
+    <p class="lead">جامعه‌ای برای ادیتورها و طراحان؛ برای یادگیری، نمایش آثار، همکاری و رشد حرفه‌ای.</p>
+    <div class="actions"><button class="primary big" onclick="openModal('register')">عضویت در انجمن ←</button><a class="ghost big" href="#works">دیدن آثار</a></div>
+    <div class="stats"><div><b>+120</b><small>عضو</small></div><div><b>+350</b><small>نمونه‌کار</small></div><div><b>+40</b><small>پروژه مشترک</small></div></div>
+  </div>
+  <div class="hero-art"><div class="ring r1"></div><div class="ring r2"></div><div class="ed">E<span>D</span></div><small>CREATE / EDIT / INSPIRE</small></div>
+</section>
+
+<section id="members" class="section">
+  <div class="section-head"><div><p class="eyebrow">COMMUNITY</p><h2>اعضای برتر</h2></div><div class="search"><input id="memberSearch" placeholder="جستجوی ادیتور...">⌕</div></div>
+  <div id="membersGrid" class="member-grid"></div>
+</section>
+
+<section id="works" class="section dark">
+  <div class="section-head"><div><p class="eyebrow">PORTFOLIO</p><h2>نمونه‌کارها</h2></div><div class="filters"><button class="filter active" data-filter="all">همه</button><button class="filter" data-filter="poster">پوستر</button><button class="filter" data-filter="portrait">پرتره</button><button class="filter" data-filter="manipulation">فتومونتاژ</button></div></div>
+  <div id="worksGrid" class="works-grid"></div>
+</section>
+
+<section id="news" class="section">
+  <div class="section-head"><div><p class="eyebrow">LATEST</p><h2>اخبار و اطلاعیه‌ها</h2></div></div>
+  <div class="news-grid">
+    <article class="news"><span>اطلاعیه</span><h3>شروع دوره جدید فعالیت انجمن</h3><p>عضویت اعضای جدید و ارسال نمونه‌کارها آغاز شد.</p><time>۴ شهریور ۱۴۰۵</time></article>
+    <article class="news"><span>رویداد</span><h3>چالش طراحی هفتگی</h3><p>یک موضوع، یک هفته و فرصت برای خلق یک اثر متفاوت.</p><time>۲ شهریور ۱۴۰۵</time></article>
+    <article class="news"><span>جامعه</span><h3>معرفی اعضای منتخب ماه</h3><p>آثار برتر اعضا در صفحه انجمن نمایش داده می‌شوند.</p><time>۳۰ مرداد ۱۴۰۵</time></article>
+  </div>
+</section>
+
+<section id="about" class="section about">
+  <div><p class="eyebrow">ABOUT EDITORAN</p><h2>یک جامعه، هزار ایده.</h2></div>
+  <div><p>انجمن ادیتوران محیطی برای ارتباط افراد خلاق، اشتراک تجربه و نمایش توانایی‌های بصری است. هدف ما ساختن فضایی حرفه‌ای، دوستانه و الهام‌بخش برای رشد اعضاست.</p>
+  <div class="mini-features"><span>✓ آموزش و تجربه</span><span>✓ معرفی استعدادها</span><span>✓ همکاری و پروژه</span></div></div>
+</section>
+
+<section id="contact" class="section contact">
+  <div><p class="eyebrow">CONTACT</p><h2>با انجمن در ارتباط باش.</h2><p>برای عضویت، همکاری یا ارسال پیشنهاد، پیام خودت را بفرست.</p></div>
+  <form id="contactForm"><input required placeholder="نام شما"><input required type="email" placeholder="ایمیل"><textarea required placeholder="پیام شما"></textarea><button class="primary" type="submit">ارسال پیام</button></form>
+</section>
+</main>
+
+<footer><div><b>انجمن ادیتوران</b><span>جامعه‌ای برای خلاقیت و ادیت حرفه‌ای</span></div><span>© 2026 Editoran</span></footer>
+
+<div id="modal" class="modal" aria-hidden="true"><div class="modal-box"><button class="close" onclick="closeModal()">×</button><div id="modalContent"></div></div></div>
+
+<script src="script.js"></script>
+</body>
+</html>
