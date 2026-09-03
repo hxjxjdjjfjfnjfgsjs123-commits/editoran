@@ -3,266 +3,180 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>استودیو طراحی</title>
+  <title>ورود به پنل مدیریت</title>
 
   <style>
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
       font-family: Tahoma, Arial, sans-serif;
     }
 
     body {
-      background: #ffffff;
-      color: #26352b;
-      line-height: 1.8;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ffffff, #eef8ef);
     }
 
-    header {
-      background: #f8fff9;
-      border-bottom: 1px solid #dcebdd;
-      padding: 18px 7%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
+    .login-box {
+      width: 90%;
+      max-width: 400px;
+      background: #ffffff;
+      padding: 40px 30px;
+      border-radius: 24px;
+      border: 1px solid #dcebdd;
+      box-shadow: 0 15px 40px rgba(80, 120, 80, 0.12);
+      text-align: center;
     }
 
     .logo {
-      font-size: 24px;
-      font-weight: bold;
-      color: #8fbc8f;
-    }
-
-    nav a {
-      color: #344b3a;
-      text-decoration: none;
-      margin-right: 22px;
-      font-size: 15px;
-    }
-
-    nav a:hover {
-      color: #7aa87a;
-    }
-
-    .hero {
-      min-height: 80vh;
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      padding: 60px 20px;
-      background: linear-gradient(135deg, #ffffff 55%, #eef8ef);
+      background: #9ac69a;
+      color: white;
+      font-size: 25px;
+      font-weight: bold;
     }
 
-    .hero-content {
-      max-width: 800px;
+    h1 {
+      color: #527957;
+      font-size: 25px;
+      margin-bottom: 8px;
     }
 
-    .hero h1 {
-      font-size: clamp(38px, 7vw, 72px);
-      color: #6f9f72;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      color: #607064;
-      font-size: 18px;
+    .subtitle {
+      color: #7a877d;
+      font-size: 13px;
       margin-bottom: 30px;
     }
 
-    .btn {
-      display: inline-block;
+    .input {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 15px;
+      border: 1px solid #d8e8d9;
+      border-radius: 12px;
+      outline: none;
+      font-size: 14px;
+      text-align: right;
+    }
+
+    .input:focus {
+      border-color: #9ac69a;
+      box-shadow: 0 0 0 3px rgba(154, 198, 154, 0.15);
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
       background: #9ac69a;
       color: white;
-      padding: 12px 30px;
-      border-radius: 30px;
-      text-decoration: none;
+      font-size: 16px;
       font-weight: bold;
+      cursor: pointer;
       transition: 0.3s;
-      box-shadow: 0 8px 20px rgba(125, 170, 125, 0.2);
     }
 
-    .btn:hover {
+    button:hover {
       background: #7fad7f;
-      transform: translateY(-2px);
     }
 
-    section {
-      padding: 80px 7%;
+    #message {
+      margin-top: 18px;
+      font-size: 13px;
+      color: #d05c5c;
+      min-height: 20px;
     }
 
-    .section-title {
-      text-align: center;
-      color: #6f9f72;
-      font-size: 32px;
-      margin-bottom: 45px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
-    }
-
-    .card {
-      background: #ffffff;
-      border: 1px solid #e0eee1;
-      border-radius: 20px;
-      padding: 30px;
-      text-align: center;
-      box-shadow: 0 8px 25px rgba(80, 120, 80, 0.07);
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-7px);
-      border-color: #a9cfa9;
-    }
-
-    .card .icon {
-      font-size: 40px;
-      margin-bottom: 15px;
-    }
-
-    .card h3 {
-      color: #6f9f72;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      color: #69756c;
-      font-size: 14px;
-    }
-
-    .about {
-      background: #f5fbf5;
-      text-align: center;
-    }
-
-    .about p {
-      max-width: 750px;
-      margin: auto;
-      color: #5f6d62;
-      font-size: 17px;
-    }
-
-    .contact {
-      text-align: center;
-      background: #ffffff;
-    }
-
-    footer {
-      background: #8fbc8f;
-      color: white;
-      text-align: center;
-      padding: 25px;
-      font-size: 14px;
-    }
-
-    @media (max-width: 600px) {
-      header {
-        padding: 15px 5%;
-      }
-
-      nav a {
-        margin-right: 10px;
-        font-size: 13px;
-      }
-
-      section {
-        padding: 60px 5%;
-      }
-
-      .hero {
-        min-height: 70vh;
-      }
+    .back {
+      display: block;
+      margin-top: 20px;
+      color: #719775;
+      text-decoration: none;
+      font-size: 13px;
     }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <div class="logo">KO OHI</div>
+  <div class="login-box">
 
-    <nav>
-      <a href="#home">خانه</a>
-      <a href="#services">خدمات</a>
-      <a href="#about">درباره من</a>
-      <a href="#contact">تماس</a>
-    </nav>
-  </header>
+    <div class="logo">K</div>
 
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <h1>طراحی خلاقانه</h1>
-      <p>
-        خلق آثار بصری خاص، مدرن و حرفه‌ای برای برندها و کسب‌وکارها
-      </p>
-      <a href="#services" class="btn">مشاهده خدمات</a>
-    </div>
-  </section>
+    <h1>پنل مدیریت</h1>
+    <p class="subtitle">برای ورود اطلاعات خود را وارد کنید</p>
 
-  <section id="services">
-    <h2 class="section-title">خدمات من</h2>
+    <form onsubmit="login(event)">
 
-    <div class="cards">
+      <input
+        class="input"
+        type="text"
+        id="username"
+        placeholder="نام کاربری"
+        required
+      >
 
-      <div class="card">
-        <div class="icon">🎨</div>
-        <h3>طراحی گرافیک</h3>
-        <p>
-          طراحی پوستر، بنر، کاور و محتوای بصری حرفه‌ای.
-        </p>
-      </div>
+      <input
+        class="input"
+        type="password"
+        id="password"
+        placeholder="رمز عبور"
+        required
+      >
 
-      <div class="card">
-        <div class="icon">✨</div>
-        <h3>طراحی لوگو</h3>
-        <p>
-          طراحی لوگوهای خلاقانه و اختصاصی برای برند شما.
-        </p>
-      </div>
+      <button type="submit">
+        ورود به پنل
+      </button>
 
-      <div class="card">
-        <div class="icon">🖼️</div>
-        <h3>ادیت عکس</h3>
-        <p>
-          ویرایش و ادیت حرفه‌ای تصاویر با کیفیت بالا.
-        </p>
-      </div>
+    </form>
 
-    </div>
-  </section>
+    <div id="message"></div>
 
-  <section class="about" id="about">
-    <h2 class="section-title">درباره من</h2>
+    <a class="back" href="index.html">
+      ← بازگشت به سایت
+    </a>
 
-    <p>
-      من یک طراح گرافیک و ادیتور هستم و هدفم خلق آثار بصری
-      خلاقانه، متفاوت و باکیفیت است که پیام شما را به بهترین
-      شکل منتقل کند.
-    </p>
-  </section>
+  </div>
 
-  <section class="contact" id="contact">
-    <h2 class="section-title">ارتباط با من</h2>
+  <script>
+    function login(event) {
+      event.preventDefault();
 
-    <p style="margin-bottom: 25px;">
-      برای سفارش طراحی و همکاری با من در ارتباط باشید.
-    </p>
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      const message = document.getElementById("message");
 
-    <a href="#" class="btn">تماس با من</a>
-  </section>
+      /*
+        توجه:
+        این فقط یک صفحه ورود نمایشی است.
+        برای پنل واقعی باید احراز هویت امن به سرور اضافه شود.
+      */
 
-  <footer>
-    © 2026 تمامی حقوق محفوظ است.
-  </footer>
+      if (username === "admin" && password === "1234") {
+        message.style.color = "#6f9f72";
+        message.textContent = "ورود موفق بود!";
+
+        setTimeout(() => {
+          window.location.href = "dashboard.html";
+        }, 700);
+
+      } else {
+        message.style.color = "#d05c5c";
+        message.textContent = "نام کاربری یا رمز عبور اشتباه است.";
+      }
+    }
+  </script>
 
 </body>
 </html>
