@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>پنل مدیریت</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-page">
+<header><nav class="nav"><a class="brand" href="index.html">پنل مدیریت</a><a class="admin-link" href="index.html">مشاهده سایت</a></nav></header>
+
+<main class="admin-main">
+<section class="admin-login card" id="loginBox">
+  <div class="section-title"><span>ADMIN</span><h2>ورود مدیر</h2><p>برای مدیریت سایت وارد شوید.</p></div>
+  <form id="loginForm">
+    <label>رمز عبور<input id="password" type="password" required placeholder="رمز عبور مدیر"></label>
+    <button class="btn primary full" type="submit">ورود به پنل</button>
+    <p class="error" id="loginError"></p>
+  </form>
+</section>
+
+<section id="panel" class="hidden">
+  <div class="admin-top"><div><h1>مدیریت سایت</h1><p>اطلاعات و نمونه‌کارهای سایت را مدیریت کن.</p></div><button class="btn secondary" id="logout">خروج</button></div>
+
+  <div class="admin-grid">
+    <div class="card">
+      <h2>تنظیمات سایت</h2>
+      <form id="settingsForm">
+        <label>نام سایت<input id="siteName" required></label>
+        <label>عنوان اصلی<input id="siteHeadline" required></label>
+        <label>متن معرفی<textarea id="siteBio" rows="4" required></textarea></label>
+        <label>ایمیل تماس<input id="siteEmail" type="email" placeholder="example@email.com"></label>
+        <button class="btn primary full" type="submit">ذخیره تنظیمات</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>افزودن نمونه‌کار</h2>
+      <form id="projectForm">
+        <input id="editId" type="hidden">
+        <label>عنوان نمونه‌کار<input id="projectTitle" required placeholder="مثلاً طراحی لوگو"></label>
+        <label>دسته‌بندی<input id="projectCategory" placeholder="طراحی گرافیک"></label>
+        <label>آدرس تصویر<input id="projectImage" required placeholder="https://.../image.jpg"></label>
+        <label>توضیحات<textarea id="projectDescription" rows="3" placeholder="توضیح کوتاه"></textarea></label>
+        <div class="form-actions"><button class="btn primary" type="submit" id="projectSubmit">افزودن نمونه‌کار</button><button class="btn secondary hidden" type="button" id="cancelEdit">لغو ویرایش</button></div>
+        <small>برای شروع، تصویر را در یک سرویس/مخزن عمومی قرار بده و لینک مستقیم تصویر را وارد کن.</small>
+      </form>
+    </div>
+  </div>
+
+  <div class="card projects-admin">
+    <h2>نمونه‌کارهای فعلی</h2>
+    <div id="adminProjects"></div>
+  </div>
+
+  <div class="note">نکته: این نسخه بدون سرور، اطلاعات را در حافظه مرورگر (localStorage) ذخیره می‌کند. برای مدیریت واقعی از هر دستگاه و ذخیره آنلاین، باید Firebase یا یک بک‌اند متصل شود.</div>
+</section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
