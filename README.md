@@ -1,3 +1,8 @@
+@import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css');
+
+* {
+  font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
+}
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
